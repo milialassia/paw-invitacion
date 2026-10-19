@@ -3,48 +3,126 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Invitación - ¡Misión de Cumpleaños!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>¡Misión Cumple 4 - Fabrizzio | Patrulla Canina al Rescate!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="card">
-    <header class="header">
-      <div class="badge">
-        <span class="number">4</span>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true"><g fill="none"><circle cx="32" cy="32" r="30" fill="#FF4C4C"/><text x="32" y="38" font-family="Baloo 2, sans-serif" font-size="26" text-anchor="middle" fill="#fff">4</text></g></svg>
       </div>
-      <h1>¡Misión de Cumpleaños!</h1>
-      <h2>¡Fabrizzio cumple 4 años!</h2>
-    </header>
-
-    <section class="content">
-      <p class="lead">La Patrulla Canina necesita a su equipo. Ven a celebrar con juegos, pastel y muchas misiones de rescate.</p>
-
-      <div class="photo-area">
-        <!-- Si subís una foto llamada "photo.jpg" al repositorio, aparecerá aquí -->
-        <img src="photo.jpg" alt="Fabrizzio" class="photo-img" onerror="this.style.display='none'">
-        <div class="photo-placeholder">Tu foto aquí (opcional)</div>
+      <div class="title-wrap">
+        <h1>¡Misión Cumple 4!</h1>
+        <p class="subtitle">La Patrulla Canina necesita tu ayuda — ¡algo pasó con la piñata!</p>
       </div>
+    </div>
+  </header>
 
-      <ul class="info">
-        <li><strong>Fecha:</strong> 11/11</li>
-        <li><strong>Día:</strong> ______________________</li>
-        <li><strong>Hora:</strong> 18:00 hs</li>
-        <li><strong>Lugar:</strong> Club del Valle (San Martín 6470, Santa Fe)</li>
-        <li><strong>RSVP / Confirmar:</strong> __________________ (teléfono o email)</li>
-      </ul>
+  <main class="container">
+    <section class="hero">
+      <!-- user photo (uploaded as photo.jpg) -->
+      <div class="hero-left">
+        <div class="photo-frame">
+          <img src="photo.jpg" alt="Fabrizzio" class="hero-photo" onerror="this.style.display='none'">
+          <div class="photo-fallback">Fabrizzio</div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <h2>¡Atención equipo!</h2>
+        <p class="lead">Alguien se llevó la piñata justo antes de la fiesta. ¡Tu misión es ayudar a Fabrizzio y a la Patrulla Canina a recuperarla!</p>
 
-      <div class="footer-note">
-        <div class="paw-row" aria-hidden="true">
-          <!-- simple paw icons (no personajes) -->
-          <svg class="paw" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="#FF4C4C"><ellipse cx="18" cy="18" rx="5" ry="7"/><ellipse cx="30" cy="12" rx="5" ry="7"/><ellipse cx="42" cy="18" rx="5" ry="7"/><ellipse cx="28" cy="30" rx="10" ry="12"/><circle cx="28" cy="44" r="10"/></g></svg>
-          <svg class="paw" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="#FFD44D"><ellipse cx="18" cy="18" rx="5" ry="7"/><ellipse cx="30" cy="12" rx="5" ry="7"/><ellipse cx="42" cy="18" rx="5" ry="7"/><ellipse cx="28" cy="30" rx="10" ry="12"/><circle cx="28" cy="44" r="10"/></g></svg>
-          <svg class="paw" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g fill="#6EC1FF"><ellipse cx="18" cy="18" rx="5" ry="7"/><ellipse cx="30" cy="12" rx="5" ry="7"/><ellipse cx="42" cy="18" rx="5" ry="7"/><ellipse cx="28" cy="30" rx="10" ry="12"/><circle cx="28" cy="44" r="10"/></g></svg>
+        <div class="details">
+          <div class="detail"><strong>Fecha:</strong> 11/11</div>
+          <div class="detail"><strong>Hora:</strong> 18:00 hs</div>
+          <div class="detail"><strong>Lugar:</strong> Club del Valle — San Martín 6470, Santa Fe</div>
         </div>
 
-        <p class="small">Envía la foto y la incluiré en la invitación. Nota: si quieres imágenes oficiales de Paw Patrol, asegúrate de que tengan licencia.</p>
+        <div class="actions">
+          <a class="btn primary" href="#misiones">Ver misiones</a>
+          <a class="btn" href="mailto:?subject=RSVP%20-%20Cumple%20Fabrizzio&body=Hola,%20confirmo%20asistencia%20al%20cumple%20de%20Fabrizzio.%20">Confirmar asistencia</a>
+        </div>
+
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=San+Mart%C3%ADn+6470+Santa+Fe" target="_blank" rel="noopener">Ver en Google Maps</a>
       </div>
     </section>
+
+    <section id="misiones" class="missions">
+      <h3>La Misión</h3>
+      <p class="mission-text">La piñata fue vista por última vez cerca del parque del club. La Patrulla Canina está investigando, pero necesitan refuerzos. Completa estas misiones para ganarte un premio:</p>
+
+      <ul class="mission-list">
+        <li>
+          <span class="mission-number">1</span>
+          <div class="mission-body">
+            <strong>Rescatar la piñata</strong>
+            <p>Juegos de búsqueda por equipos: encuentra las pistas escondidas en el salón y el jardín.</p>
+          </div>
+        </li>
+        <li>
+          <span class="mission-number">2</span>
+          <div class="mission-body">
+            <strong>Entrenamiento de cachorros</strong>
+            <p>Juegos y desafíos (saltar, correr y lanzar) para ganar puntos de equipo.</p>
+          </div>
+        </li>
+        <li>
+          <span class="mission-number">3</span>
+          <div class="mission-body">
+            <strong>Rescate final</strong>
+            <p>Una gran misión colaborativa para abrir la piñata y celebrar el éxito.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="info-grid">
+      <div class="card small">
+        <h4>Qué traer</h4>
+        <ul>
+          <li>Ganas de jugar</li>
+          <li>Zapatos cómodos</li>
+          <li>Si querés, disfraz o remera de tu cachorro favorito</li>
+        </ul>
+      </div>
+
+      <div class="card small">
+        <h4>Edad</h4>
+        <p>Niños de 2 a 8 años (actividad pensada para los más chicos)</p>
+      </div>
+
+      <div class="card small">
+        <h4>Contacto</h4>
+        <p>RSVP: ____________________</p>
+      </div>
+    </section>
+
+    <section class="footer-cta">
+      <p>¿Listos para la misión? ¡La Patrulla Canina cuenta con vos!</p>
+      <div class="actions">
+        <a class="btn primary" href="#misiones">Comenzar misión</a>
+        <button class="btn" onclick="window.print()">Imprimir invitación</button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Nota: Esta invitación usa una imagen proporcionada por el organizador. Paw Patrol es una marca registrada; si querés usar imágenes oficiales adicionales, confirmá que tengan licencia.</p>
+      <p>Repositorio: <a href="https://github.com/milialassia/paw-invitacion" target="_blank" rel="noopener">milialassia/paw-invitacion</a></p>
+    </footer>
   </main>
+
+  <script>
+    // Simple progressive enhancement: hide fallback if image loads
+    document.addEventListener('DOMContentLoaded', function(){
+      var img = document.querySelector('.hero-photo');
+      if(img && img.complete && img.naturalWidth > 0){
+        var fb = document.querySelector('.photo-fallback'); if(fb) fb.style.display='none';
+      }
+      if(img){
+        img.addEventListener('load', function(){ var fb = document.querySelector('.photo-fallback'); if(fb) fb.style.display='none'; });
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,160 +1,56 @@
 :root{
-  --blue:#6EC1FF;
-  --red:#FF4C4C;
-  --yellow:#FFD44D;
-  --bg:#f8fcff;
-  --card:#ffffff;
-  --text:#14313a;
-  --muted:#6b7b80;
-  --radius:16px;
-  --shadow: 0 12px 30px rgba(20,49,58,0.08);
+  --bg-1: linear-gradient(180deg,#e6f8ff 0%, #fff 100%);
+  --primary:#085f9e; /* deep blue */
+  --accent:#ff4c4c; /* red */
+  --accent-2:#ffd44d; /* yellow */
+  --muted:#5b6b70;
+  --card:#fff;
+  --radius:18px;
+  --shadow: 0 14px 36px rgba(8,95,158,0.08);
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
-
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  margin:0;
-  background: linear-gradient(180deg,var(--bg), #ffffff 60%);
-  color:var(--text);
-  display:flex;
-  min-height:100vh;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-}
+body{margin:0;background:var(--bg-1);color:#06323f;}
+.container{max-width:1100px;margin:24px auto;padding:18px}
+.site-header{background:transparent;padding:18px 0}
+.header-inner{display:flex;align-items:center;gap:16px}
+.logo{flex:0 0 auto}
+.title-wrap h1{margin:0;font-family:'Baloo 2', cursive;font-size:34px;color:var(--primary)}
+.title-wrap .subtitle{margin:4px 0 0;color:var(--muted);font-weight:600}
 
-.card{
-  width:100%;
-  max-width:760px;
-  background:var(--card);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-  padding:28px;
-}
+.hero{display:flex;gap:20px;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));padding:18px;border-radius:16px;box-shadow:var(--shadow);align-items:center}
+.hero-left{flex:0 0 260px}
+.photo-frame{width:240px;height:240px;border-radius:50%;overflow:hidden;position:relative;border:8px solid #fff;box-shadow:0 12px 30px rgba(8,95,158,0.12)}
+.hero-photo{width:100%;height:100%;object-fit:cover;display:block}
+.photo-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+.hero-right{flex:1}
+.lead{font-size:16px;margin:8px 0 12px}
+.details{display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:12px}
+.detail{background:linear-gradient(90deg, rgba(110,193,255,0.06), rgba(255,212,77,0.03));padding:10px;border-radius:10px;font-weight:700}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;color:#06323f;background:transparent;border:2px solid rgba(6,50,63,0.08);font-weight:700}
+.btn.primary{background:var(--primary);color:#fff;border:0}
+.map-link{display:inline-block;margin-top:10px;color:var(--primary);font-weight:600}
 
-.header{
-  text-align:center;
-  padding-bottom:10px;
-  border-bottom: 2px dashed rgba(20,49,58,0.06);
-}
+.missions{margin-top:20px}
+.missions h3{font-family:'Fredoka One', 'Baloo 2', cursive;color:var(--accent);margin-bottom:8px}
+.mission-text{margin:0 0 10px}
+.mission-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.mission-list li{display:flex;gap:12px;align-items:flex-start;background:linear-gradient(90deg, rgba(255,76,76,0.03), rgba(110,193,255,0.03));padding:12px;border-radius:12px}
+.mission-number{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-weight:800;font-size:18px}
+.mission-body p{margin:6px 0 0;color:var(--muted)}
 
-.badge{
-  width:96px;
-  height:96px;
-  margin:0 auto 8px;
-  background:linear-gradient(180deg,var(--red), #e64545);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-  font-family: 'Baloo 2', cursive;
-}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.card.small{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 20px rgba(8,95,158,0.04)}
+.card.small h4{margin:0 0 8px}
 
-.badge .number{
-  font-size:36px;
-  font-weight:700;
-}
+.footer-cta{margin-top:20px;background:linear-gradient(90deg, rgba(110,193,255,0.06), rgba(255,212,77,0.03));padding:14px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.site-footer{margin-top:18px;color:var(--muted);font-size:13px}
+.site-footer a{color:var(--primary)}
 
-.header h1{
-  margin:8px 0 2px;
-  font-family: 'Baloo 2', cursive;
-  color:var(--text);
-  font-size:28px;
-}
-
-.header h2{
-  margin:0;
-  font-weight:600;
-  color:var(--blue);
-  font-size:18px;
-}
-
-.content{
-  padding:20px 8px;
-}
-
-.lead{
-  margin:0 0 14px;
-  font-size:16px;
-}
-
-/* Photo area (placeholder until subas la imagen) */
-.photo-area{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:12px 0;
-  position:relative;
-}
-.photo-placeholder{
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  background:linear-gradient(180deg, rgba(110,193,255,0.12), rgba(255,76,76,0.06));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--muted);
-  font-weight:600;
-  border:4px solid rgba(255,255,255,0.6);
-  box-shadow: 0 8px 20px rgba(20,49,58,0.06);
-}
-
-/* If an image is inserted, use this class */
-.photo-img{
-  width:160px;
-  height:160px;
-  object-fit:cover;
-  border-radius:50%;
-  display:block;
-  border:4px solid #fff;
-  box-shadow: 0 8px 20px rgba(20,49,58,0.08);
-}
-
-.info{
-  list-style:none;
-  padding:0;
-  margin:0 0 18px;
-  display:grid;
-  gap:10px;
-}
-
-.info li{
-  background:linear-gradient(90deg, rgba(110,193,255,0.07), rgba(255,212,77,0.04));
-  padding:10px 12px;
-  border-radius:10px;
-  font-weight:600;
-}
-
-.footer-note{
-  border-top: 1px solid rgba(20,49,58,0.04);
-  padding-top:14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.paw-row{display:flex;gap:10px;align-items:center}
-.paw{width:48px;height:48px}
-
-.small{
-  flex:1;
-  margin:0;
-  font-size:13px;
-  color: var(--muted);
-}
-
-/* responsive */
-@media (max-width:480px){
-  .card{padding:18px}
-  .badge{width:76px;height:76px}
-  .badge .number{font-size:28px}
-  .header h1{font-size:22px}
-  .photo-placeholder, .photo-img{width:120px;height:120px}
+@media (max-width:880px){
+  .hero{flex-direction:column;align-items:center}
+  .hero-left{flex:0 0 auto}
+  .info-grid{grid-template-columns:1fr}
 }
