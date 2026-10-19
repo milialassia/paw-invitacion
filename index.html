@@ -35,7 +35,7 @@
       </header>
 
       <section class="mission-area">
-        <div class="photo-wrap">
+        <div class="photo-wrap" aria-hidden="true">
           <img src="image_734c9147.jpg" alt="Fabrizzio" class="kid-photo">
         </div>
 
@@ -50,9 +50,9 @@
           </ul>
 
           <div class="actions">
-            <a class="btn primary" href="#misiones" aria-label="Ver misiones">Ver misiones</a>
+            <button id="accept-btn" class="btn primary" aria-label="Aceptar misión">¡Acepto la misión!</button>
             <a class="btn" href="mailto:?subject=RSVP%20-%20Cumple%20Fabrizzio&body=Hola!%20Confirmo%20asistencia%20al%20cumple%20de%20Fabrizzio.">Confirmar (mail)</a>
-            <a class="btn whatsapp" href="https://wa.me/" target="_blank" rel="noopener">Confirmar (WhatsApp)</a>
+            <button class="btn" onclick="window.print()">Imprimir / Descargar</button>
           </div>
         </div>
       </section>
@@ -71,16 +71,60 @@
         <p class="small">Nota legal: Paw Patrol es una marca registrada; este diseño usa colores y elementos inspirados sin imágenes oficiales (salvo la foto subida por el organizador).</p>
       </section>
     </main>
+
+    <!-- small celebration overlay that appears briefly after user accepts mission -->
+    <div id="celebration" class="celebration" aria-hidden="true">
+      <div class="celebration-inner">
+        <div class="big-text">¡Misión Aceptada!</div>
+        <div class="sub">La Patrulla Canina está en camino 🐶🎉</div>
+      </div>
+    </div>
   </div>
 
   <script>
-    // simple paw trail animation timing
-    (function(){
-      const paws = document.querySelectorAll('.paw');
-      paws.forEach((p, i)=>{
-        p.style.setProperty('--i', i);
-      });
-    })();
+    // Play a short chime using WebAudio on user gesture and show celebration overlay
+    function playChime() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = 'sine';
+        o.frequency.value = 880; // A5
+        g.gain.value = 0;
+        o.connect(g);
+        g.connect(ctx.destination);
+        const now = ctx.currentTime;
+        g.gain.setValueAtTime(0, now);
+        g.gain.linearRampToValueAtTime(0.12, now + 0.02);
+        o.start(now);
+        g.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
+        o.frequency.exponentialRampToValueAtTime(440, now + 0.6);
+        setTimeout(()=>{ o.stop(); ctx.close(); }, 700);
+      } catch (e) {
+        // ignore audio errors (browsers may block without gesture)
+        console.log('Audio unavailable', e);
+      }
+    }
+
+    function showCelebration() {
+      const el = document.getElementById('celebration');
+      if(!el) return;
+      el.style.display = 'flex';
+      el.setAttribute('aria-hidden','false');
+      setTimeout(()=>{ el.style.opacity = '1'; }, 50);
+      setTimeout(()=>{
+        el.style.opacity = '0';
+        setTimeout(()=>{ el.style.display='none'; el.setAttribute('aria-hidden','true'); }, 700);
+      }, 2500);
+    }
+
+    document.getElementById('accept-btn').addEventListener('click', function(){
+      // user gesture: play chime and show celebration
+      playChime();
+      showCelebration();
+      // scroll to missions
+      document.getElementById('misiones').scrollIntoView({behavior:'smooth'});
+    });
   </script>
 </body>
 </html>

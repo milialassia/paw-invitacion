@@ -1,15 +1,14 @@
-/* New kid-friendly mission design */
+/* Revamped mission style (viva animation, paw trail, celebration) */
 :root{
   --sky:#cfeffd;
-  --grass:#dff7e6;
   --primary:#0b6aa6;
   --accent:#ff4c4c;
   --accent-2:#ffd44d;
-  --card:#fff;
   --muted:#4a6b6f;
+  --card:#fff;
   --radius:18px;
-  --shadow: 0 14px 38px rgba(11,106,166,0.08);
-  --paw-size:36px;
+  --shadow: 0 18px 44px rgba(11,106,166,0.08);
+  --paw-size:44px;
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 *{box-sizing:border-box}
@@ -18,27 +17,28 @@ body{margin:0;background:linear-gradient(180deg,var(--sky),#ffffff 60%);color:#0
 .stage{min-height:100vh;padding:28px 16px}
 .card{max-width:980px;margin:0 auto;background:linear-gradient(180deg,#fff 0%, #fffaf0 100%);border-radius:20px;padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
 
-/* Paw trail floating across top */
-.paw-trail{position:absolute;top:10px;left:-10%;right:-10%;height:56px;pointer-events:none}
-.paw{position:absolute;font-size:var(--paw-size);opacity:0.95;animation:trail 6s linear infinite}
+/* Paw trail floating and popping in (viva) */
+.paw-trail{position:absolute;top:8px;left:-5%;right:-5%;height:80px;pointer-events:none}
+.paw{position:absolute;font-size:var(--paw-size);opacity:0;transform:translateY(-6px) scale(0.85);animation:trail 4.5s ease-in-out infinite}
 .p1{left:0%;animation-delay:0s}
-.p2{left:20%;animation-delay:0.6s}
-.p3{left:40%;animation-delay:1.2s}
-.p4{left:60%;animation-delay:1.8s}
-.p5{left:80%;animation-delay:2.4s}
+.p2{left:20%;animation-delay:0.5s}
+.p3{left:40%;animation-delay:1s}
+.p4{left:60%;animation-delay:1.5s}
+.p5{left:80%;animation-delay:2s}
 @keyframes trail{
-  0%{transform:translateY(-8px) rotate(-10deg);opacity:0}
-  10%{opacity:1}
-  50%{transform:translateY(6px) rotate(10deg);opacity:1}
+  0%{opacity:0;transform:translateY(-8px) scale(0.7) rotate(-12deg)}
+  12%{opacity:1;transform:translateY(0) scale(1) rotate(-6deg)}
+  30%{transform:translateY(6px) scale(1.06) rotate(6deg)}
+  60%{opacity:1;transform:translateY(0) scale(1) rotate(4deg)}
   90%{opacity:1}
-  100%{transform:translateY(-8px) rotate(-10deg);opacity:0}
+  100%{opacity:0;transform:translateY(-8px) scale(0.85) rotate(-12deg)}
 }
 
 .hero{display:flex;align-items:center;gap:12px;padding:10px}
 .hero .left{flex:0 0 86px}
-.badge{width:76px;height:76px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#e03b3b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Baloo 2',cursive;font-size:34px}
+.badge{width:86px;height:86px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#e03b3b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Baloo 2',cursive;font-size:34px}
 .hero .center{flex:1;text-align:center}
-.hero h1{margin:0;font-family:'Baloo 2',cursive;color:var(--accent);font-size:28px}
+.hero h1{margin:0;font-family:'Baloo 2',cursive;color:var(--accent);font-size:30px}
 .lead{margin:6px 0 0;color:var(--muted);font-weight:700}
 .mini-badges{display:flex;flex-direction:column;gap:6px}
 .chip{display:inline-block;padding:6px 8px;border-radius:12px;font-weight:800;color:#06323f}
@@ -46,17 +46,18 @@ body{margin:0;background:linear-gradient(180deg,var(--sky),#ffffff 60%);color:#0
 .chip.yellow{background:var(--accent-2)}
 
 .mission-area{display:flex;gap:18px;padding:18px;border-radius:12px}
-.photo-wrap{flex:0 0 320px;display:flex;align-items:center;justify-content:center}
-.kid-photo{width:320px;height:320px;object-fit:cover;border-radius:18px;border:8px solid #fff;box-shadow:0 12px 30px rgba(11,106,166,0.12)}
+.photo-wrap{flex:0 0 340px;display:flex;align-items:center;justify-content:center}
+.kid-photo{width:340px;height:340px;object-fit:cover;border-radius:16px;border:10px solid #fff;box-shadow:0 18px 44px rgba(11,106,166,0.12)}
 
 .mission-card{flex:1;background:linear-gradient(180deg,rgba(110,193,255,0.06),rgba(255,212,77,0.03));padding:18px;border-radius:12px}
 .mission-card h2{margin:0;color:var(--primary);font-size:22px}
 .mission-desc{margin:8px 0 12px;color:var(--muted)}
 .details{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
-.details li{font-weight:800;background:rgba(255,255,255,0.6);padding:8px;border-radius:10px}
+.details li{font-weight:800;background:rgba(255,255,255,0.7);padding:10px;border-radius:10px}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;color:#05313f;background:transparent;border:2px solid rgba(5,49,66,0.06);font-weight:800}
-.btn.primary{background:var(--accent);color:#fff;border:0}
+.btn{display:inline-block;padding:12px 16px;border-radius:14px;text-decoration:none;color:#05313f;background:transparent;border:2px solid rgba(5,49,66,0.06);font-weight:800}
+.btn.primary{background:var(--accent);color:#fff;border:0;box-shadow:0 8px 20px rgba(255,76,76,0.12);transform:translateY(0);transition:transform 180ms}
+.btn.primary:active{transform:translateY(2px)}
 .btn.whatsapp{background:#25D366;color:#fff;border:0}
 
 .missions{padding:14px 18px}
@@ -67,15 +68,22 @@ body{margin:0;background:linear-gradient(180deg,var(--sky),#ffffff 60%);color:#0
 .note{margin:0;color:var(--muted);font-weight:700}
 .small{font-size:13px;color:var(--muted)}
 
+/* celebration overlay */
+.celebration{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,12,20,0.35);opacity:0;transition:opacity 260ms}
+.celebration-inner{background:linear-gradient(180deg,#fff,#fffbef);padding:28px;border-radius:16px;box-shadow:0 20px 60px rgba(2,12,20,0.4);text-align:center}
+.big-text{font-family:'Baloo 2',cursive;font-size:36px;color:var(--accent);margin-bottom:8px}
+.sub{font-weight:700;color:var(--muted)}
+
 /* responsive */
 @media (max-width:900px){
   .mission-area{flex-direction:column;align-items:center}
   .photo-wrap{flex:0 0 auto}
-  .kid-photo{width:260px;height:260px;border-radius:14px}
+  .kid-photo{width:280px;height:280px;border-radius:12px}
 }
 
 /* print-friendly */
 @media print{
   .paw-trail{display:none}
   .btn,.chip,.mini-badges{display:none}
+  .celebration{display:none}
 }
