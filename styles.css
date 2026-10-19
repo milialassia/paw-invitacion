@@ -1,89 +1,353 @@
-/* Revamped mission style (viva animation, paw trail, celebration) */
-:root{
-  --sky:#cfeffd;
-  --primary:#0b6aa6;
-  --accent:#ff4c4c;
-  --accent-2:#ffd44d;
-  --muted:#4a6b6f;
-  --card:#fff;
-  --radius:18px;
-  --shadow: 0 18px 44px rgba(11,106,166,0.08);
-  --paw-size:44px;
-  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:linear-gradient(180deg,var(--sky),#ffffff 60%);color:#04313a}
-.stage{min-height:100vh;padding:28px 16px}
-.card{max-width:980px;margin:0 auto;background:linear-gradient(180deg,#fff 0%, #fffaf0 100%);border-radius:20px;padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-
-/* Paw trail floating and popping in (viva) */
-.paw-trail{position:absolute;top:8px;left:-5%;right:-5%;height:80px;pointer-events:none}
-.paw{position:absolute;font-size:var(--paw-size);opacity:0;transform:translateY(-6px) scale(0.85);animation:trail 4.5s ease-in-out infinite}
-.p1{left:0%;animation-delay:0s}
-.p2{left:20%;animation-delay:0.5s}
-.p3{left:40%;animation-delay:1s}
-.p4{left:60%;animation-delay:1.5s}
-.p5{left:80%;animation-delay:2s}
-@keyframes trail{
-  0%{opacity:0;transform:translateY(-8px) scale(0.7) rotate(-12deg)}
-  12%{opacity:1;transform:translateY(0) scale(1) rotate(-6deg)}
-  30%{transform:translateY(6px) scale(1.06) rotate(6deg)}
-  60%{opacity:1;transform:translateY(0) scale(1) rotate(4deg)}
-  90%{opacity:1}
-  100%{opacity:0;transform:translateY(-8px) scale(0.85) rotate(-12deg)}
+:root {
+  --sky: #cfeffd;
+  --paper: #f7f8f2;
+  --card: #ffffff;
+  --red: #fb4d4d;
+  --red-dark: #e64040;
+  --blue: #1f86d0;
+  --blue-dark: #0b5c9a;
+  --yellow: #f6d74d;
+  --cream: #f5efe5;
+  --text: #093f55;
+  --muted: #587178;
+  --shadow: 0 18px 44px rgba(16, 92, 134, 0.1);
+  --radius: 18px;
 }
 
-.hero{display:flex;align-items:center;gap:12px;padding:10px}
-.hero .left{flex:0 0 86px}
-.badge{width:86px;height:86px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#e03b3b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Baloo 2',cursive;font-size:34px}
-.hero .center{flex:1;text-align:center}
-.hero h1{margin:0;font-family:'Baloo 2',cursive;color:var(--accent);font-size:30px}
-.lead{margin:6px 0 0;color:var(--muted);font-weight:700}
-.mini-badges{display:flex;flex-direction:column;gap:6px}
-.chip{display:inline-block;padding:6px 8px;border-radius:12px;font-weight:800;color:#06323f}
-.chip.blue{background:var(--primary);color:#fff}
-.chip.yellow{background:var(--accent-2)}
-
-.mission-area{display:flex;gap:18px;padding:18px;border-radius:12px}
-.photo-wrap{flex:0 0 340px;display:flex;align-items:center;justify-content:center}
-.kid-photo{width:340px;height:340px;object-fit:cover;border-radius:16px;border:10px solid #fff;box-shadow:0 18px 44px rgba(11,106,166,0.12)}
-
-.mission-card{flex:1;background:linear-gradient(180deg,rgba(110,193,255,0.06),rgba(255,212,77,0.03));padding:18px;border-radius:12px}
-.mission-card h2{margin:0;color:var(--primary);font-size:22px}
-.mission-desc{margin:8px 0 12px;color:var(--muted)}
-.details{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
-.details li{font-weight:800;background:rgba(255,255,255,0.7);padding:10px;border-radius:10px}
-.actions{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 16px;border-radius:14px;text-decoration:none;color:#05313f;background:transparent;border:2px solid rgba(5,49,66,0.06);font-weight:800}
-.btn.primary{background:var(--accent);color:#fff;border:0;box-shadow:0 8px 20px rgba(255,76,76,0.12);transform:translateY(0);transition:transform 180ms}
-.btn.primary:active{transform:translateY(2px)}
-.btn.whatsapp{background:#25D366;color:#fff;border:0}
-
-.missions{padding:14px 18px}
-.missions h3{margin:0 0 8px;font-family:'Fredoka One',cursive;color:var(--accent)}
-.missions ol{margin:0;padding-left:18px;color:var(--muted);font-weight:700}
-
-.footer{padding:12px 18px;border-top:1px dashed rgba(5,49,66,0.06);display:flex;justify-content:space-between;align-items:center}
-.note{margin:0;color:var(--muted);font-weight:700}
-.small{font-size:13px;color:var(--muted)}
-
-/* celebration overlay */
-.celebration{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,12,20,0.35);opacity:0;transition:opacity 260ms}
-.celebration-inner{background:linear-gradient(180deg,#fff,#fffbef);padding:28px;border-radius:16px;box-shadow:0 20px 60px rgba(2,12,20,0.4);text-align:center}
-.big-text{font-family:'Baloo 2',cursive;font-size:36px;color:var(--accent);margin-bottom:8px}
-.sub{font-weight:700;color:var(--muted)}
-
-/* responsive */
-@media (max-width:900px){
-  .mission-area{flex-direction:column;align-items:center}
-  .photo-wrap{flex:0 0 auto}
-  .kid-photo{width:280px;height:280px;border-radius:12px}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #cfeffd 0%, #dfeffc 100%);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
 }
 
-/* print-friendly */
-@media print{
-  .paw-trail{display:none}
-  .btn,.chip,.mini-badges{display:none}
-  .celebration{display:none}
+.page-shell {
+  width: min(1250px, 96vw);
+  padding: 24px 8px;
+  position: relative;
+}
+
+.paw-icons {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+}
+.paw-icons span:nth-child(1){ margin-left: 8%; }
+.paw-icons span:nth-child(2){ margin-left: 18%; }
+.paw-icons span:nth-child(3){ margin-right: 18%; }
+.paw-icons span:nth-child(4){ margin-right: 8%; }
+
+.invite-card {
+  background: rgba(255,255,255,0.82);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 28px 28px 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.top-row {
+  display: grid;
+  grid-template-columns: 100px minmax(0,1fr) 170px;
+  gap: 18px;
+  align-items: center;
+}
+
+.circle-number {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--red), var(--red-dark));
+  color: white;
+  display: grid;
+  place-items: center;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  box-shadow: 0 12px 26px rgba(251, 77, 77, 0.2);
+}
+
+.headline-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 2vw + 1rem, 3.15rem);
+  line-height: 1;
+  color: var(--red);
+  letter-spacing: 0.03em;
+}
+
+.subhead-wrap {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+}
+.subhead-wrap p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
+}
+.subhead-wrap .question {
+  color: var(--blue-dark);
+  font-weight: 800;
+}
+
+.status-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 118px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(17, 120, 182, 0.12);
+}
+.tag.mission { background: linear-gradient(180deg, var(--blue), var(--blue-dark)); }
+.tag.fun { background: linear-gradient(180deg, var(--yellow), #f0c631); color: #24313d; }
+
+.content-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1.05fr 1.5fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+.photo-panel {
+  background: linear-gradient(180deg, rgba(31,134,208,0.06), rgba(255,255,255,0.2));
+  border-radius: var(--radius);
+  padding: 16px;
+  border: 1px solid rgba(12,80,114,0.08);
+}
+
+.photo-frame {
+  width: 100%;
+  border-radius: calc(var(--radius) + 6px);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(19,140,200,0.08));
+  box-shadow: 0 14px 30px rgba(11,92,154,0.12);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.details-panel {
+  background: rgba(245, 244, 236, 0.9);
+  padding: 18px 20px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(12,80,114,0.06);
+}
+
+.details-panel h2 {
+  margin: 0 0 10px;
+  color: var(--blue-dark);
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(1.9rem, 1.2vw + 1.2rem, 2.8rem);
+  line-height: 1.1;
+}
+
+.intro {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.info-box {
+  border-radius: 12px;
+  background: rgba(255,255,255,0.65);
+  padding: 14px 16px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  border: 1px solid rgba(12,80,114,0.04);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 1.02rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: linear-gradient(180deg, var(--red), var(--red-dark));
+  color: white;
+  box-shadow: 0 12px 22px rgba(251, 77, 77, 0.18);
+}
+
+.btn.secondary {
+  background: rgba(255,255,255,0.7);
+  color: var(--text);
+  border: 2px solid rgba(12,80,114,0.08);
+}
+
+.print-btn {
+  margin-top: 12px;
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff, #f0f8fb);
+  color: var(--text);
+  border: 2px solid rgba(12,80,114,0.08);
+}
+
+.missions-panel {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.42);
+  border: 1px solid rgba(12, 80, 114, 0.06);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+}
+
+.missions-panel h3 {
+  margin: 0 0 12px;
+  color: var(--red);
+  font-family: 'Fredoka One', 'Baloo 2', sans-serif;
+  font-size: clamp(1.3rem, 1.4vw + 1rem, 2.2rem);
+}
+
+.missions-panel ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.bottom-row {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(21,56,66,0.15);
+}
+
+.callout {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(1.05rem, 0.8vw + 0.8rem, 1.5rem);
+  color: var(--text);
+  max-width: 480px;
+}
+
+.legal {
+  margin: 0;
+  max-width: 520px;
+  line-height: 1.5;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 980px) {
+  .top-row {
+    grid-template-columns: 100px 1fr;
+  }
+  .status-column {
+    grid-column: 2 / 3;
+    justify-self: end;
+    flex-direction: row;
+    align-items: center;
+  }
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .invite-card {
+    padding: 18px 14px;
+  }
+  .top-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .status-column {
+    grid-column: 1;
+    justify-self: center;
+  }
+  .button-row {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+  }
+  .bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+  .paw-icons,
+  .status-column,
+  .btn,
+  .print-btn {
+    display: none !important;
+  }
+  .invite-card {
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 10mm;
+  }
 }

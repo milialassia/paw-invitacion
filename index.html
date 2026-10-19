@@ -1,130 +1,79 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>¡Misión: Rescatar la Piñata! — Fabrizzio 4 años</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¡Tenem os un problema! — Fabrizzio 4 años</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="stage">
-    <div class="paw-trail" aria-hidden="true">
-      <span class="paw p1">🐾</span>
-      <span class="paw p2">🐾</span>
-      <span class="paw p3">🐾</span>
-      <span class="paw p4">🐾</span>
-      <span class="paw p5">🐾</span>
+  <div class="page-shell">
+    <div class="paw-icons" aria-hidden="true">
+      <span>🐾</span>
+      <span>🐾</span>
+      <span>🐾</span>
+      <span>🐾</span>
     </div>
 
-    <main class="card">
-      <header class="hero">
-        <div class="left">
-          <div class="badge">4</div>
+    <main class="invite-card">
+      <header class="top-row">
+        <div class="num-wrap">
+          <div class="circle-number">4</div>
         </div>
-        <div class="center">
+
+        <div class="headline-wrap">
           <h1>¡TENEMOS UN PROBLEMA!</h1>
-          <p class="lead">Alguien se llevó la piñata justo antes de la fiesta. La Patrulla Canina pide refuerzos. ¿Aceptás la misión?</p>
-        </div>
-        <div class="right">
-          <div class="mini-badges">
-            <span class="chip blue">Misión</span>
-            <span class="chip yellow">Diversión</span>
+          <div class="subhead-wrap">
+            <p>Alguien se llevó la piñata justo antes de la fiesta. La Patrulla Canina pide refuerzos.</p>
+            <p class="question">¿Aceptás la misión?</p>
           </div>
+        </div>
+
+        <div class="status-column">
+          <span class="tag mission">Misión</span>
+          <span class="tag fun">Diversión</span>
         </div>
       </header>
 
-      <section class="mission-area">
-        <div class="photo-wrap" aria-hidden="true">
-          <img src="image_734c9147.jpg" alt="Fabrizzio" class="kid-photo">
+      <section class="content-grid">
+        <div class="photo-panel">
+          <div class="photo-frame">
+            <img src="image_734c9147.jpg" alt="Fabrizzio" />
+          </div>
         </div>
 
-        <div class="mission-card">
+        <div class="details-panel">
           <h2>¡Misión: Rescatar la Piñata!</h2>
-          <p class="mission-desc">Vení a ayudar a Fabrizzio y su equipo de cachorros. Habrá pistas, juegos por equipos y una gran misión final.</p>
+          <p class="intro">Vení a ayudar a Fabrizzio y su equipo de cachorros. Habrá pistas, juegos por equipos y una gran misión final.</p>
 
-          <ul class="details">
-            <li><strong>Día:</strong> 11/11</li>
-            <li><strong>Hora:</strong> 18:00 hs</li>
-            <li><strong>Lugar:</strong> Club del Valle — San Martín 6470, Santa Fe</li>
-          </ul>
+          <div class="info-box"><strong>Día:</strong> 11/11</div>
+          <div class="info-box"><strong>Hora:</strong> 18:00 hs</div>
+          <div class="info-box"><strong>Lugar:</strong> Club del Valle — San Martín 6470, Santa Fe</div>
 
-          <div class="actions">
-            <button id="accept-btn" class="btn primary" aria-label="Aceptar misión">¡Acepto la misión!</button>
-            <a class="btn" href="mailto:?subject=RSVP%20-%20Cumple%20Fabrizzio&body=Hola!%20Confirmo%20asistencia%20al%20cumple%20de%20Fabrizzio.">Confirmar (mail)</a>
-            <button class="btn" onclick="window.print()">Imprimir / Descargar</button>
+          <div class="button-row">
+            <a href="#misiones" class="btn primary">Ver misiones</a>
+            <a href="mailto:?subject=RSVP%20-%20Cumple%20Fabrizzio&body=Hola!%20Confirmo%20asistencia%20al%20cumple%20de%20Fabrizzio." class="btn secondary">Confirmar (mail)</a>
           </div>
+
+          <button class="btn print-btn" onclick="window.print()">Imprimir / PDF</button>
         </div>
       </section>
 
-      <section id="misiones" class="missions">
+      <section id="misiones" class="missions-panel">
         <h3>Misiones para el equipo</h3>
         <ol>
-          <li><strong>Rastrear huellas:</strong> búsqueda de pistas por el salón y el jardín.</li>
-          <li><strong>Entrenamiento de cachorros:</strong> carreras y desafíos para sumar puntos.</li>
-          <li><strong>Rescate final:</strong> misión colaborativa para abrir la piñata y celebrar.</li>
+          <li>Rastrear huellas: búsqueda de pistas por el salón y el jardín.</li>
+          <li>Entrenamiento de cachorros: carreras y desafíos para sumar puntos.</li>
+          <li>Rescate final: misión colaborativa para abrir la piñata y celebrar.</li>
         </ol>
       </section>
 
-      <section class="footer">
-        <p class="note">Traé ropa cómoda. Si querés, vení disfrazado de tu cachorro favorito.</p>
-        <p class="small">Nota legal: Paw Patrol es una marca registrada; este diseño usa colores y elementos inspirados sin imágenes oficiales (salvo la foto subida por el organizador).</p>
-      </section>
+      <footer class="bottom-row">
+        <p class="callout">Traé ropa cómoda. Si querés, vení disfrazado de tu cachorro favorito.</p>
+        <p class="legal">Nota legal: Paw Patrol es una marca registrada; este diseño usa colores y elementos inspirados sin imágenes oficiales (salvo la foto subida por el organizador).</p>
+      </footer>
     </main>
-
-    <!-- small celebration overlay that appears briefly after user accepts mission -->
-    <div id="celebration" class="celebration" aria-hidden="true">
-      <div class="celebration-inner">
-        <div class="big-text">¡Misión Aceptada!</div>
-        <div class="sub">La Patrulla Canina está en camino 🐶🎉</div>
-      </div>
-    </div>
   </div>
-
-  <script>
-    // Play a short chime using WebAudio on user gesture and show celebration overlay
-    function playChime() {
-      try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const o = ctx.createOscillator();
-        const g = ctx.createGain();
-        o.type = 'sine';
-        o.frequency.value = 880; // A5
-        g.gain.value = 0;
-        o.connect(g);
-        g.connect(ctx.destination);
-        const now = ctx.currentTime;
-        g.gain.setValueAtTime(0, now);
-        g.gain.linearRampToValueAtTime(0.12, now + 0.02);
-        o.start(now);
-        g.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
-        o.frequency.exponentialRampToValueAtTime(440, now + 0.6);
-        setTimeout(()=>{ o.stop(); ctx.close(); }, 700);
-      } catch (e) {
-        // ignore audio errors (browsers may block without gesture)
-        console.log('Audio unavailable', e);
-      }
-    }
-
-    function showCelebration() {
-      const el = document.getElementById('celebration');
-      if(!el) return;
-      el.style.display = 'flex';
-      el.setAttribute('aria-hidden','false');
-      setTimeout(()=>{ el.style.opacity = '1'; }, 50);
-      setTimeout(()=>{
-        el.style.opacity = '0';
-        setTimeout(()=>{ el.style.display='none'; el.setAttribute('aria-hidden','true'); }, 700);
-      }, 2500);
-    }
-
-    document.getElementById('accept-btn').addEventListener('click', function(){
-      // user gesture: play chime and show celebration
-      playChime();
-      showCelebration();
-      // scroll to missions
-      document.getElementById('misiones').scrollIntoView({behavior:'smooth'});
-    });
-  </script>
 </body>
 </html>
