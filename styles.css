@@ -1,66 +1,81 @@
-/* Styles: Childlike, colorful, print-friendly */
+/* New kid-friendly mission design */
 :root{
-  --sky:#bfefff;
-  --grass:#d9f7d9;
-  --primary:#0b5f9a;
+  --sky:#cfeffd;
+  --grass:#dff7e6;
+  --primary:#0b6aa6;
   --accent:#ff4c4c;
   --accent-2:#ffd44d;
   --card:#fff;
-  --muted:#4b6a70;
+  --muted:#4a6b6f;
   --radius:18px;
-  --shadow: 0 12px 30px rgba(11,95,154,0.08);
+  --shadow: 0 14px 38px rgba(11,106,166,0.08);
+  --paw-size:36px;
   font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:linear-gradient(180deg,var(--sky),#ffffff 60%);color:#053142}
-.scene{min-height:100vh;padding:30px 16px}
-.card{max-width:960px;margin:0 auto;background:linear-gradient(180deg,#fff 0%, #fffaf0 100%);border-radius:20px;padding:18px;box-shadow:var(--shadow);position:relative}
-.card-header{text-align:center;padding-top:8px}
-.badge{width:92px;height:92px;background:linear-gradient(180deg,var(--accent),#e03b3b);border-radius:50%;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:'Baloo 2',cursive;font-size:40px;font-weight:700;box-shadow:0 8px 24px rgba(255,76,76,0.18)}
-.card-header h1{font-family:'Baloo 2',cursive;margin:10px 0 6px;font-size:30px;color:var(--primary)}
-.subtitle{margin:0;color:var(--muted);font-weight:600}
+body{margin:0;background:linear-gradient(180deg,var(--sky),#ffffff 60%);color:#04313a}
+.stage{min-height:100vh;padding:28px 16px}
+.card{max-width:980px;margin:0 auto;background:linear-gradient(180deg,#fff 0%, #fffaf0 100%);border-radius:20px;padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
 
-.hero{display:flex;gap:20px;align-items:center;padding:18px;margin-top:12px}
-.photo{flex:0 0 260px;display:flex;align-items:center;justify-content:center}
-.photo-img{width:220px;height:220px;border-radius:50%;object-fit:cover;border:8px solid #fff;box-shadow:0 12px 30px rgba(8,95,158,0.12)}
-.photo-fallback{width:220px;height:220px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(110,193,255,0.12),rgba(255,76,76,0.06));color:var(--muted);font-weight:800;border:8px solid #fff}
+/* Paw trail floating across top */
+.paw-trail{position:absolute;top:10px;left:-10%;right:-10%;height:56px;pointer-events:none}
+.paw{position:absolute;font-size:var(--paw-size);opacity:0.95;animation:trail 6s linear infinite}
+.p1{left:0%;animation-delay:0s}
+.p2{left:20%;animation-delay:0.6s}
+.p3{left:40%;animation-delay:1.2s}
+.p4{left:60%;animation-delay:1.8s}
+.p5{left:80%;animation-delay:2.4s}
+@keyframes trail{
+  0%{transform:translateY(-8px) rotate(-10deg);opacity:0}
+  10%{opacity:1}
+  50%{transform:translateY(6px) rotate(10deg);opacity:1}
+  90%{opacity:1}
+  100%{transform:translateY(-8px) rotate(-10deg);opacity:0}
+}
 
-.info{flex:1}
-.big{font-size:18px;font-weight:800;color:var(--primary);margin:0 0 8px}
-.kid{font-size:16px;color:var(--muted);margin:0 0 12px}
-.buttons{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;color:#053142;background:transparent;border:2px solid rgba(5,49,66,0.06);font-weight:800}
+.hero{display:flex;align-items:center;gap:12px;padding:10px}
+.hero .left{flex:0 0 86px}
+.badge{width:76px;height:76px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#e03b3b);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Baloo 2',cursive;font-size:34px}
+.hero .center{flex:1;text-align:center}
+.hero h1{margin:0;font-family:'Baloo 2',cursive;color:var(--accent);font-size:28px}
+.lead{margin:6px 0 0;color:var(--muted);font-weight:700}
+.mini-badges{display:flex;flex-direction:column;gap:6px}
+.chip{display:inline-block;padding:6px 8px;border-radius:12px;font-weight:800;color:#06323f}
+.chip.blue{background:var(--primary);color:#fff}
+.chip.yellow{background:var(--accent-2)}
+
+.mission-area{display:flex;gap:18px;padding:18px;border-radius:12px}
+.photo-wrap{flex:0 0 320px;display:flex;align-items:center;justify-content:center}
+.kid-photo{width:320px;height:320px;object-fit:cover;border-radius:18px;border:8px solid #fff;box-shadow:0 12px 30px rgba(11,106,166,0.12)}
+
+.mission-card{flex:1;background:linear-gradient(180deg,rgba(110,193,255,0.06),rgba(255,212,77,0.03));padding:18px;border-radius:12px}
+.mission-card h2{margin:0;color:var(--primary);font-size:22px}
+.mission-desc{margin:8px 0 12px;color:var(--muted)}
+.details{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
+.details li{font-weight:800;background:rgba(255,255,255,0.6);padding:8px;border-radius:10px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;color:#05313f;background:transparent;border:2px solid rgba(5,49,66,0.06);font-weight:800}
 .btn.primary{background:var(--accent);color:#fff;border:0}
 .btn.whatsapp{background:#25D366;color:#fff;border:0}
 
-.activities{padding:16px 18px;margin-top:12px;background:linear-gradient(90deg, rgba(255,76,76,0.03), rgba(110,193,255,0.03));border-radius:12px}
-.activities h2{font-family:'Fredoka One',cursive;color:var(--accent);margin:0 0 6px}
-.paws{display:flex;gap:12px;margin-top:12px}
-.paw{width:56px;height:56px}
+.missions{padding:14px 18px}
+.missions h3{margin:0 0 8px;font-family:'Fredoka One',cursive;color:var(--accent)}
+.missions ol{margin:0;padding-left:18px;color:var(--muted);font-weight:700}
 
-.card-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px dashed rgba(5,49,66,0.06)}
+.footer{padding:12px 18px;border-top:1px dashed rgba(5,49,66,0.06);display:flex;justify-content:space-between;align-items:center}
+.note{margin:0;color:var(--muted);font-weight:700}
 .small{font-size:13px;color:var(--muted)}
-.repo a{color:var(--primary);font-weight:700}
-
-/* clouds positioning */
-.cloud{position:absolute;fill:#fff;opacity:0.95}
-.c1{left:6%;top:8%;width:220px}
-.c2{right:6%;top:6%;width:220px}
 
 /* responsive */
-@media (max-width:880px){
-  .hero{flex-direction:column;align-items:center}
-  .photo{order:0}
-  .info{text-align:center}
-  .card{padding:14px}
+@media (max-width:900px){
+  .mission-area{flex-direction:column;align-items:center}
+  .photo-wrap{flex:0 0 auto}
+  .kid-photo{width:260px;height:260px;border-radius:14px}
 }
 
-/* print styles */
+/* print-friendly */
 @media print{
-  body{background:#fff}
-  .scene{padding:0}
-  .card{box-shadow:none;border-radius:0}
-  .cloud{display:none}
-  .buttons,.repo{display:none}
+  .paw-trail{display:none}
+  .btn,.chip,.mini-badges{display:none}
 }

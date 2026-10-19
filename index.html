@@ -3,71 +3,84 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fabrizzio 4 años — ¡Misión: rescatar la piñata!</title>
+  <title>¡Misión: Rescatar la Piñata! — Fabrizzio 4 años</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="scene">
-    <!-- Decorative clouds -->
-    <svg class="cloud c1" viewBox="0 0 200 60" aria-hidden="true"><g fill="#fff"><ellipse cx="40" cy="30" rx="40" ry="20"/><ellipse cx="90" cy="20" rx="30" ry="16"/><ellipse cx="140" cy="30" rx="38" ry="20"/></g></svg>
-    <svg class="cloud c2" viewBox="0 0 200 60" aria-hidden="true"><g fill="#fff"><ellipse cx="50" cy="25" rx="36" ry="18"/><ellipse cx="100" cy="18" rx="28" ry="14"/><ellipse cx="150" cy="28" rx="36" ry="18"/></g></svg>
+  <div class="stage">
+    <div class="paw-trail" aria-hidden="true">
+      <span class="paw p1">🐾</span>
+      <span class="paw p2">🐾</span>
+      <span class="paw p3">🐾</span>
+      <span class="paw p4">🐾</span>
+      <span class="paw p5">🐾</span>
+    </div>
 
     <main class="card">
-      <header class="card-header">
-        <div class="badge">4</div>
-        <h1>¡Misión: rescatar la piñata!</h1>
-        <p class="subtitle">Fabrizzio cumple 4 años y la Patrulla Canina te necesita para la fiesta.</p>
+      <header class="hero">
+        <div class="left">
+          <div class="badge">4</div>
+        </div>
+        <div class="center">
+          <h1>¡TENEMOS UN PROBLEMA!</h1>
+          <p class="lead">Alguien se llevó la piñata justo antes de la fiesta. La Patrulla Canina pide refuerzos. ¿Aceptás la misión?</p>
+        </div>
+        <div class="right">
+          <div class="mini-badges">
+            <span class="chip blue">Misión</span>
+            <span class="chip yellow">Diversión</span>
+          </div>
+        </div>
       </header>
 
-      <section class="hero">
-        <div class="photo">
-          <img src="photo.jpg" alt="Fabrizzio" class="photo-img" onerror="this.style.display='none'">
-          <div class="photo-fallback">Fabrizzio</div>
+      <section class="mission-area">
+        <div class="photo-wrap">
+          <img src="image_734c9147.jpg" alt="Fabrizzio" class="kid-photo">
         </div>
 
-        <div class="info">
-          <p class="big">Día 11/11 — 18:00 hs<br>
-          Club del Valle<br>
-          San Martín 6470, Santa Fe</p>
+        <div class="mission-card">
+          <h2>¡Misión: Rescatar la Piñata!</h2>
+          <p class="mission-desc">Vení a ayudar a Fabrizzio y su equipo de cachorros. Habrá pistas, juegos por equipos y una gran misión final.</p>
 
-          <p class="kid">¡Ven con tu mejor energía! Habrá juegos, búsquedas, música y una gran piñata para compartir.</p>
+          <ul class="details">
+            <li><strong>Día:</strong> 11/11</li>
+            <li><strong>Hora:</strong> 18:00 hs</li>
+            <li><strong>Lugar:</strong> Club del Valle — San Martín 6470, Santa Fe</li>
+          </ul>
 
-          <div class="buttons">
-            <a class="btn primary" href="mailto:?subject=RSVP%20-%20Cumple%20Fabrizzio&body=Hola!%20Confirmo%20asistencia%20al%20cumple%20de%20Fabrizzio.">Confirmar (mail)</a>
-            <a class="btn whatsapp" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
-            <button class="btn" onclick="window.print()">Imprimir</button>
+          <div class="actions">
+            <a class="btn primary" href="#misiones" aria-label="Ver misiones">Ver misiones</a>
+            <a class="btn" href="mailto:?subject=RSVP%20-%20Cumple%20Fabrizzio&body=Hola!%20Confirmo%20asistencia%20al%20cumple%20de%20Fabrizzio.">Confirmar (mail)</a>
+            <a class="btn whatsapp" href="https://wa.me/" target="_blank" rel="noopener">Confirmar (WhatsApp)</a>
           </div>
         </div>
       </section>
 
-      <section class="activities">
-        <h2>Las sorpresas</h2>
-        <p class="kid">Juegos de equipo, carrera de cachorros, pintura de caritas y la gran misión final: abrir la piñata y festejar con regalos y golosinas.</p>
-
-        <div class="paws" aria-hidden="true">
-          <svg viewBox="0 0 64 64" class="paw"><g fill="#FF4C4C"><ellipse cx="18" cy="18" rx="4.5" ry="6.5"/><ellipse cx="30" cy="12" rx="4.5" ry="6.5"/><ellipse cx="42" cy="18" rx="4.5" ry="6.5"/><ellipse cx="28" cy="30" rx="9" ry="10.5"/><circle cx="28" cy="44" r="9.5"/></g></svg>
-          <svg viewBox="0 0 64 64" class="paw"><g fill="#FFD44D"><ellipse cx="18" cy="18" rx="4.5" ry="6.5"/><ellipse cx="30" cy="12" rx="4.5" ry="6.5"/><ellipse cx="42" cy="18" rx="4.5" ry="6.5"/><ellipse cx="28" cy="30" rx="9" ry="10.5"/><circle cx="28" cy="44" r="9.5"/></g></svg>
-          <svg viewBox="0 0 64 64" class="paw"><g fill="#6EC1FF"><ellipse cx="18" cy="18" rx="4.5" ry="6.5"/><ellipse cx="30" cy="12" rx="4.5" ry="6.5"/><ellipse cx="42" cy="18" rx="4.5" ry="6.5"/><ellipse cx="28" cy="30" rx="9" ry="10.5"/><circle cx="28" cy="44" r="9.5"/></g></svg>
-        </div>
+      <section id="misiones" class="missions">
+        <h3>Misiones para el equipo</h3>
+        <ol>
+          <li><strong>Rastrear huellas:</strong> búsqueda de pistas por el salón y el jardín.</li>
+          <li><strong>Entrenamiento de cachorros:</strong> carreras y desafíos para sumar puntos.</li>
+          <li><strong>Rescate final:</strong> misión colaborativa para abrir la piñata y celebrar.</li>
+        </ol>
       </section>
 
-      <footer class="card-footer">
-        <p class="small">Nota: la invitación usa la foto que subiste. Paw Patrol es marca registrada; el diseño usa colores y elementos inspirados para mantenerlo divertido y seguro.</p>
-        <p class="repo">Repo: <a href="https://github.com/milialassia/paw-invitacion" target="_blank" rel="noopener">milialassia/paw-invitacion</a></p>
-      </footer>
+      <section class="footer">
+        <p class="note">Traé ropa cómoda. Si querés, vení disfrazado de tu cachorro favorito.</p>
+        <p class="small">Nota legal: Paw Patrol es una marca registrada; este diseño usa colores y elementos inspirados sin imágenes oficiales (salvo la foto subida por el organizador).</p>
+      </section>
     </main>
   </div>
 
   <script>
-    // hide fallback if image loads
-    document.addEventListener('DOMContentLoaded', function(){
-      var img = document.querySelector('.photo-img');
-      if(img && img.complete && img.naturalWidth>0){
-        var fb = document.querySelector('.photo-fallback'); if(fb) fb.style.display='none';
-      }
-      if(img){ img.addEventListener('load', function(){ var fb = document.querySelector('.photo-fallback'); if(fb) fb.style.display='none'; }); }
-    });
+    // simple paw trail animation timing
+    (function(){
+      const paws = document.querySelectorAll('.paw');
+      paws.forEach((p, i)=>{
+        p.style.setProperty('--i', i);
+      });
+    })();
   </script>
 </body>
 </html>
